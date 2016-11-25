@@ -21,25 +21,27 @@ public class AStar : Pathfinder {
 	public override bool findPathNextStep (){
 		if (!foundPath) {
 			AStarNode current = getLowestFCost (openList);
-			removeOpenList(current);
-			addClosedList (current);
+			if (current != null) {
+				removeOpenList (current);
+				addClosedList (current);
 
-			if (current.Equals (end)) {
-				foundPath = true;
-				return foundPath;
-			}
-
-			foreach (AStarNode neighbour in current.neighbours) {
-				if (!neighbour.walkable || closedList.Contains (neighbour)) {
-					continue;
+				if (current.Equals (end)) {
+					foundPath = true;
+					return foundPath;
 				}
 
-				float newFCost = neighbour.calculateFCost (current, end);
-				if (newFCost < neighbour.fcost || !openList.Contains (neighbour)) {
-					neighbour.fcost = newFCost;
-					neighbour.parent = current;
-					if (!openList.Contains (neighbour)) {
-						addOpenList (neighbour);
+				foreach (AStarNode neighbour in current.neighbours) {
+					if (!neighbour.walkable || closedList.Contains (neighbour)) {
+						continue;
+					}
+
+					float newFCost = neighbour.calculateFCost (current, end);
+					if (newFCost < neighbour.fcost || !openList.Contains (neighbour)) {
+						neighbour.fcost = newFCost;
+						neighbour.parent = current;
+						if (!openList.Contains (neighbour)) {
+							addOpenList (neighbour);
+						}
 					}
 				}
 			}
@@ -96,7 +98,7 @@ public class AStar : Pathfinder {
 
 	private void addOpenList(AStarNode node){
 		openList.Add (node);
-		node.setInspected();
+		node.setInspected ();
 	}
 
 	private void removeOpenList(AStarNode node){

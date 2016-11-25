@@ -33,14 +33,16 @@ public class Node : MonoBehaviour {
 	public void setVisited(){
 		if (walkable && !isStart && !isEnd) {
 			changeColor (new Color (1, 0, 0));
+		} else if (isEnd) {
+			changeColor (new Color (0, 0.6f, 0.6f));
 		}
 	}
 
 	public void setInspected(){
 		if (isStart) {
-			changeColor (new Color (0, 0.7f, 0));
+			changeColor (new Color (0, 0.8f, 0));
 		} else if (isEnd) {
-			changeColor (new Color (0, 0.7f, 0.7f));
+			changeColor (new Color (0, 0.8f, 0.8f));
 		} else if (!walkable) {
 			changeColor (new Color (0.3f, 0.3f, 0.3f));
 		} else {
