@@ -2,4 +2,4 @@
 
 Implementation of A* Pathfinding Algorithm in Unity for studying purposes.
 
-![astar](https://cloud.githubusercontent.com/assets/23743591/20633507/9b6bedf0-b347-11e6-8319-eaaedc700ae0.PNG)
+![astarv1 1](https://cloud.githubusercontent.com/assets/23743591/20639684/af5fa530-b3ca-11e6-90b6-8fa58a8c00e7.PNG)
