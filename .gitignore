@@ -1,3 +1,27 @@
+# Libraries
 Library/
+Assets/Editor/
+Assets/OculusPlatform.meta
+Assets/OculusPlatform/
+Assets/ThirdParty.meta
+Assets/ThirdParty/
+Assets/Plugins/
+Assets/Plugins.meta
+
+# Preferences and Temp
 Temp/
+*.tmp
 *.csproj
+*.unityproj
+*.sln
+*.suo
+*.userprefs
+*.user
+
+# Unity generated
+*.pidb.meta
+sysinfo.txt
+
+# Build
+*.unitypackage
+*.apk
